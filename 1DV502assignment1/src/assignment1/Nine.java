@@ -32,27 +32,24 @@ public class Nine {
             System.out.println("You rolled " + second + " and in total you have " + (playerTotal));
         } 
 
-        if (playerTotal > 9) {
-            System.out.println("You lost");
-        } else {
-            first = rnd.nextInt(6) + 1;
-            System.out.println("The computer rolled " + first);
-            computerTotal = first;
-            
-            if (first <= 4) {
-                second = rnd.nextInt(6) + 1;
-                computerTotal = first + second;
-                System.out.println("The computer rolls again and gets " + second + " in total " + (computerTotal));
-            }
-
-            if (playerTotal > computerTotal || computerTotal > 9) {
-                System.out.println("You won!");
-            } else if (playerTotal == computerTotal){
-                System.out.println("It's a tie");
-            } else {
-                System.out.println("You lost");
-            }
+        first = rnd.nextInt(6) + 1;
+        System.out.println("The computer rolled " + first);
+        computerTotal = first;
+        
+        if (first <= 4) {
+            second = rnd.nextInt(6) + 1;
+            computerTotal = first + second;
+            System.out.println("The computer rolls again and gets " + second + " in total " + (computerTotal));
         }
+        
+        if (playerTotal == computerTotal || playerTotal > 9 && computerTotal > 9) {
+          System.out.println("No one wins");
+        } else if (playerTotal > computerTotal || computerTotal > 9) {
+            System.out.println("You won!");
+        } else {
+            System.out.println("You lost");
+        }
+        
     }
 
     scan.close();
