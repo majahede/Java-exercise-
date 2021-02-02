@@ -19,26 +19,26 @@ public class GameSRP {
       int computer = rnd.nextInt(3) + 1;
       
       if (input == computer) {
-        System.out.println("It's a draw!");
-        draw++;
+          System.out.println("It's a draw!");
+          draw++;
       } else if (input == 1 && computer == 2) {
-        System.out.println("You lost, computer had rock!");
-        lose++;
+          System.out.println("You lost, computer had rock!");
+          lose++;
       } else if (input == 3 && computer == 1) {
-        System.out.println("You lost, computer had scissor!");
-        lose++;
+          System.out.println("You lost, computer had scissor!");
+          lose++;
       } else if (input == 2 && computer == 3) {
-        System.out.println("You lost, computer had paper!");
-        lose++;
+          System.out.println("You lost, computer had paper!");
+          lose++;
       } else if (input == 1 && computer == 3) {
-        System.out.println("You won, computer had paper!");
-        win++;
+          System.out.println("You won, computer had paper!");
+          win++;
       } else if (input == 3 && computer == 2) {
-        System.out.println("You won, computer had rock!");
-        win++;
+          System.out.println("You won, computer had rock!");
+          win++;
       } else if (input == 2 && computer == 1) {
-        System.out.println("You won, computer had scissor!");
-        win++;
+          System.out.println("You won, computer had scissor!");
+          win++;
       }
     }
 
