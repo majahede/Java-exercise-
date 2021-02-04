@@ -15,13 +15,13 @@ public class DangerousWork {
     int workingDays = 0;
 
     while (total <= input) { 
-        if (workingDays == 0) {
-          salary = 0.01;
-        }
-        total += salary;
-        workingDays++;
-        salary = salary * 2;
+      if (workingDays == 0) {
+        salary = 0.01;
       }
+      total += salary;
+      workingDays++;
+      salary = salary * 2;
+    }
 
     System.out.println("You will have your money in " + workingDays + " days.");
 

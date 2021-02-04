@@ -7,7 +7,7 @@ public class DayOfWeek {
     String[] days = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
     Scanner scan = new Scanner(System.in);
     
-    while (true) {
+    while (days.length == 7) {
     
     System.out.print("Enter year: ");
     int year = scan.nextInt();
@@ -34,11 +34,11 @@ public class DayOfWeek {
       weekday = (day + ((26 * (month + 1)) / 10) + k + (k / 4) + (j / 4) + (5 * j)) % 7;
       
     }
-
+  
     System.out.println("Day of week is " + days[weekday]);
     System.out.println();
-    
   }
 
+  scan.close();
   }
 }

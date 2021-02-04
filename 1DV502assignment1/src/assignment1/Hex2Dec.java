@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class Hex2Dec {
 
+  /**
+   * Converts a hexadecimal number to a decimal number.
+   * 
+   * @param hex - the hexadecimal number.
+   * @return decimal number.
+   */
   public static int hexToDecimal(String hex) {
 
     String characters = "0123456789ABCDEF";

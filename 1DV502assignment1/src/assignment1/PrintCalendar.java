@@ -8,8 +8,8 @@ public class PrintCalendar {
   /**
    * Check if year is a leap year.
    * 
-   * @param year - the year.....
-   * @return boolean which tells if the year is a leapyear or not.
+   * @param year - A year.
+   * @return if the year is a leap year or not.
    */
   public static boolean isLeapYear(int year) {
 
@@ -32,9 +32,10 @@ public class PrintCalendar {
   }
 
   /**
+   * Get the first day of a month.
    * 
-   * @param year
-   * @param month
+   * @param year - A year.
+   * @param month - A month.
    * @return The number of the weekday the first of that year and month.
    */
   public static int firstDayInMonth(int year, int month) {
@@ -61,17 +62,40 @@ public class PrintCalendar {
     return weekday - 1;
   }
  
-
+/**
+ * Get the month from the corresponding number.
+ * 
+ * @param month - A month.
+ * @return A string contianing a month.
+ */
   public static String getMonth(int month) {
     String[] months = new String[] {"January", "February", "Mars", "April", "May", "June", "July", "August", "September", "Ocotber", "November", "December"};
     return  months[month - 1];
   }
 
-  public static int numberOfDays(int month) {
+  /**
+   * Get the number of days from a given month.
+   * 
+   * @param year - A Year
+   * @param month - A month.
+   * @return number of days in the given month.
+   */
+  public static int numberOfDays(int year, int month) {
+    boolean leap = isLeapYear(year);
     int[] days = new int [] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (leap) {
+      days[1] = 29;
+    }
     return days[month - 1];
    }
 
+   /**
+    * Prints a calendar.
+    * 
+    * @param year - A year.
+    * @param month - A month.
+    */
    public static void printCalendar(int year, int month) {
     String[] days = new String[] {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", };
     
@@ -85,7 +109,7 @@ public class PrintCalendar {
 
     System.out.println();
 
-    int numOfdays = numberOfDays(month);
+    int numOfdays = numberOfDays(year, month);
 
     ArrayList<Integer> arrayOfDays = new ArrayList<>();
 
@@ -101,7 +125,7 @@ public class PrintCalendar {
 
     while(arrayOfDays.size() > 0) {
       for (int j = 0; j < 7; j++) {
-        
+
         if (arrayOfDays.size() > 0) {
           if (arrayOfDays.get(0) == 0) {
             System.out.print("    ");
@@ -113,7 +137,6 @@ public class PrintCalendar {
           arrayOfDays.remove(0);
         }
       }
-
       System.out.println();
     }
    }
