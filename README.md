@@ -1,0 +1,3 @@
+# Java-exercise-
+
+School assignment
